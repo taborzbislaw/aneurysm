@@ -632,8 +632,7 @@ class aneurysmWidget(ScriptedLoadableModuleWidget, VTKObservationMixin):
  
  
         segmentationNode = self._parameterNode.thresholdedVolume
-        segName = segmentationNode.GetSegmentation().GetSegmentIDs()[0]
-        segmentId = segmentationNode.GetSegmentation().GetSegmentIdBySegmentName(segName)
+        segmentId = segmentationNode.GetSegmentation().GetSegmentIDs()[0]
         segArr = slicer.util.arrayFromSegmentBinaryLabelmap(segmentationNode, segmentId, self._parameterNode.inputVolume)
 
         imArr = slicer.util.arrayFromVolume(self._parameterNode.inputVolume)
